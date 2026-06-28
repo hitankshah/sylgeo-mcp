@@ -1,0 +1,19 @@
+startCommand:
+  type: stdio
+  commandFunction: |-
+    (config) => ({
+      command: 'python',
+      args: ['-m', 'sylgeo_mcp.server'],
+      env: {
+        SYLGEO_API_KEY: config.sylgeoApiKey
+      }
+    })
+
+configSchema:
+  type: object
+  properties:
+    sylgeoApiKey:
+      type: string
+      description: "Your Sylgeo API key from https://sylgeo.com/dashboard/api-keys"
+  required:
+    - sylgeoApiKey

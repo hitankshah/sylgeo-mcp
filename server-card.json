@@ -1,0 +1,151 @@
+{
+  "serverInfo": {
+    "name": "Sylgeo",
+    "version": "0.1.0"
+  },
+  "tools": [
+    {
+      "name": "scan_brand_visibility",
+      "description": "Run a full AI visibility scan across ChatGPT, Claude, Gemini & Perplexity. Returns mention rates, rankings, and sentiment. Scan runs in background.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to scan (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    },
+    {
+      "name": "check_visibility_score",
+      "description": "Get current GEO and AEO visibility scores with per-model breakdown, mention count, and sentiment analysis.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to check (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    },
+    {
+      "name": "analyze_website_geo",
+      "description": "Analyze a website's GEO readiness — checks robots.txt for AI crawlers, schema markup, and content structure.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Full URL to analyze (e.g. 'https://example.com')."
+          }
+        },
+        "required": ["url"]
+      }
+    },
+    {
+      "name": "get_geo_recommendations",
+      "description": "Get prioritized action items and recommendations with estimated impact scores to improve AI visibility.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to get recommendations for (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    },
+    {
+      "name": "compare_competitors",
+      "description": "Compare your brand's AI visibility against tracked competitors across all major LLMs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "Your domain to compare (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    },
+    {
+      "name": "get_scan_history",
+      "description": "Get historical scan data and score trends over time for a domain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to get history for (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    },
+    {
+      "name": "get_tracked_prompts",
+      "description": "Get the list of AI search prompts currently tracked and tested for a domain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to get prompts for (e.g. 'example.com')."
+          }
+        },
+        "required": ["domain"]
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "geo_audit",
+      "description": "Run a complete GEO audit for a domain.",
+      "arguments": [
+        {
+          "name": "domain",
+          "description": "The domain to audit (e.g. 'example.com').",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "competitor_analysis",
+      "description": "Run a competitive AI visibility analysis.",
+      "arguments": [
+        {
+          "name": "domain",
+          "description": "The domain to analyze (e.g. 'example.com').",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "content_optimization",
+      "description": "Analyze content for AI visibility optimization.",
+      "arguments": [
+        {
+          "name": "domain",
+          "description": "The domain to optimize (e.g. 'example.com').",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "uri": "sylgeo://docs/getting-started",
+      "name": "Getting Started with Sylgeo MCP"
+    },
+    {
+      "uri": "sylgeo://docs/what-is-geo",
+      "name": "What is GEO (Generative Engine Optimization)?"
+    }
+  ]
+}
